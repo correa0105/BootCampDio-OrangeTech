@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <script src="./assets/js/pokemoModel.js" defer></script>
     <script src="./assets/js/pokeApi.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
 
@@ -22,13 +23,23 @@
 
     <main>
 
-        <h1>Pokedex</h1>
-
-        <div id="pokemonsContainer">
-            <ul id="listaDePokemons">
-            </ul>
+        <div class="inputContainer">
+            <h1>- POKEDEX -</h1>
+            <div class="labelContainer">
+                <label for="checkboxFirstGeneration">CARREGAR APENAS 1º GERAÇÃO</label>
+                <input type="checkbox" value="10" name="checkboxFirstGeneration" id="checkboxFirstGeneration">
+            </div>
+            <div class="submitContainer">
+                <label for="amountPokemons">OU DETERMINE QUANTOS DESEJA CARREGAR</label>
+                <input id="amountPokemons" type="number">
+            </div>
+            <button id="loadPokemons">CARREGAR</button>
         </div>
 
+        <ul id="pokemonList">
+        </ul>
+
+        <button id="loadMorePokemons"> CARREGAR +10 POKEMONS</button>
     </main>
 
 </body>

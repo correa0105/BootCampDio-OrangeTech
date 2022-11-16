@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-transform: capitalize; 
+    text-transform: capitalize;
 }
 
 html {
@@ -24,33 +24,85 @@ body {
 }
 
 main {
-    padding-top: 1.6rem;
-    width: 80vw;
+    position: relative;
+    top: 3rem;
+    padding: 2rem;
+    width: 65vw;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.276);
+    border-radius: 2rem;
 }
 
 main > h1 {
     font-size: 3rem;
 }
 
-h1 {
-    color: #989a9c;
-}
-
-#pokemonsContainer {
+.inputContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-#listaDePokemons {
-    display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
-    height: 15rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    color: white; 
 }
 
-#listaDePokemons li {
+.submitContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    align-items: center;
+}
+
+#loadPokemons, .submitContainer input {
+    padding: .6rem;
+    border: none;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.submitContainer input {
+    width: 5.2rem;
+    margin-left: .6rem;
+}
+
+#loadPokemons {
+    background-color: #49D0B0;
+    cursor: pointer;
+    color: white;
+}
+
+.submitContainer button:hover {
+    background-color: #6fc5b1;
+}
+
+.labelContainer {
+    display: flex;
+    gap: .6rem;
+}
+
+.labelContainer label {
+    font-size: 1.1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #e7e7e7;
+    margin: 0 0;
+}
+
+#pokemonList {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 2rem;
+    justify-items: center;
+}
+
+#pokemonList li {
     display: flex;
     flex-direction: column;
     background-color: #49D0B0;
@@ -62,7 +114,7 @@ h1 {
     width: 100%;
 }
 
-#listaDePokemons li img {
+#pokemonList li img {
     width: 9rem;
 }
 
@@ -73,7 +125,7 @@ h1 {
     font-size: 2rem;
 }
 
-.cardContainerBaixo {
+.downCardContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +133,7 @@ h1 {
     gap: 3rem
 }
 
-.atributosPokemon {
+.pokemonAtributes {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +141,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-.atributosPokemon span {
+.pokemonAtributes span {
     padding: .3rem 1rem;
     background-color: rgba(255, 255, 255, 0.371);
     text-align: center;
@@ -97,15 +149,42 @@ h1 {
     cursor: pointer;
 }
 
-.atributosPokemon span:hover {
+.pokemonAtributes span:hover {
     background-color: rgba(156, 156, 156, 0.655);
+}
+
+#loadMorePokemons {
+    margin: 2rem 0 0 0;
+    font-size: 1.3rem;
+    padding: .8rem 4rem;
+    background-color: #49D0B0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white
+}
+
+#loadMorePokemons:hover {
+    background-color: #6fc5b1;
 }
 
 @media screen and (min-width: 720px) {
     html {
         font-size: 75%;
     }
+    .inputContainer {
+        flex-direction: row;
+    }
 
-    #listaDePokemons li {
-    width: auto; }
+    #pokemonList {
+        grid-template-columns:  1fr 1fr 1fr;
+    }
+
+    #pokemonList li {
+        width: 100%; }
+
+    .submitContainer {
+        flex-direction: row;
+        gap: 0;
+    }
 }
